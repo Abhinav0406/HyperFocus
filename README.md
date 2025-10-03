@@ -56,7 +56,7 @@ Hyper Focus is a modern web application that transforms how you interact with ed
 
 1. **Clone the Repository**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Abhinav0406/HyperFocus.git
 cd hyper-focus
 ```
 
@@ -81,7 +81,7 @@ VITE_YOUTUBE_API_KEY=your_youtube_api_key
 npm run dev
 ```
 
-Visit `http://localhost:5173` to start focusing!
+Visit `http://localhost:8080` to start focusing!
 
 ## 🎯 How Hyper Focus Works
 
@@ -164,9 +164,7 @@ We welcome contributions to make Hyper Focus even better!
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
