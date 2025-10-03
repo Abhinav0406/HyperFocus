@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
+# YouTube Data API Explorer
 
-## Project info
+A modern web application for exploring YouTube videos, managing notes, and analyzing video data using the YouTube Data API v3.
 
-**URL**: https://lovable.dev/projects/84f38bdf-0005-4b97-bcb7-3507c26674fb
+## 🚀 Features
 
-## How can I edit this code?
+- **Video Search**: Search and discover YouTube videos
+- **Video Details**: View comprehensive video information
+- **Comments System**: Load and view video comments
+- **Related Videos**: Discover related content
+- **Notes Management**: Save and manage personal notes for videos
+- **Timestamps**: Add timestamped notes while watching
+- **User Dashboard**: View your saved notes and watch history
+- **Channel Information**: Explore channel details and playlists
+- **Responsive Design**: Modern UI with dark/light theme support
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **API**: YouTube Data API v3
+- **State Management**: React Context + Hooks
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/84f38bdf-0005-4b97-bcb7-3507c26674fb) and start prompting.
+## 📋 Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js 18+ 
+- npm or yarn
+- YouTube Data API key
+- Supabase account
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 1. Clone the Repository
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+git clone <your-repo-url>
+cd joystream-labs
+```
 
-Follow these steps:
+### 2. Install Dependencies
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 3. Environment Setup
 
-# Step 3: Install the necessary dependencies.
-npm i
+Create a `.env.local` file in the root directory:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```env
+# Supabase Configuration
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+
+# YouTube API Configuration
+VITE_YOUTUBE_API_KEY=your_youtube_api_key
+```
+
+### 4. Database Setup
+
+Run the Supabase migrations to set up the database schema:
+
+```bash
+# If using Supabase CLI
+supabase db reset
+```
+
+### 5. Start Development Server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit `http://localhost:5173` to view the application.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📁 Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   └── ...             # Custom components
+├── contexts/           # React contexts (Auth, etc.)
+├── hooks/              # Custom React hooks
+├── integrations/       # External service integrations
+│   └── supabase/       # Supabase client and types
+├── pages/              # Page components
+├── services/           # API services
+├── types/              # TypeScript type definitions
+└── lib/                # Utility functions
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 API Usage & Costs
 
-## What technologies are used for this project?
+### YouTube Data API Quotas
 
-This project is built with:
+- **Free Tier**: 10,000 units/day
+- **Search**: 100 units per request
+- **Video Details**: 1 unit per request
+- **Comments**: 1 unit per request
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Cost Optimization
 
-## How can I deploy this project?
+- Implement caching for frequently accessed data
+- Use lazy loading for comments and related videos
+- Batch requests when possible
+- Monitor usage in Google Cloud Console
 
-Simply open [Lovable](https://lovable.dev/projects/84f38bdf-0005-4b97-bcb7-3507c26674fb) and click on Share -> Publish.
+## 🗄️ Database Schema
 
-## Can I connect a custom domain to my Lovable project?
+### Tables
 
-Yes, you can!
+- `profiles` - User profile information
+- `video_notes` - User's saved notes for videos
+- `video_timestamps` - Timestamped notes
+- `watch_history` - User's video watch history
+- `video_summaries` - AI-generated video summaries
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚀 Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy automatically on push
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Node.js:
+- Netlify
+- Railway
+- Render
+- DigitalOcean App Platform
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- YouTube Data API v3
+- Supabase for backend services
+- shadcn/ui for beautiful components
+- Tailwind CSS for styling
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/your-repo/issues) page
+2. Create a new issue with detailed information
+3. Include error messages and steps to reproduce
+
+---
+
+**Note**: This project requires valid API keys for YouTube Data API and Supabase to function properly.
